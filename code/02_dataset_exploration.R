@@ -41,3 +41,36 @@ print(min(as.matrix(count_matrix), na.rm = TRUE))
 
 cat("Maximum count:\n")
 print(max(as.matrix(count_matrix), na.rm = TRUE))
+
+
+# Create results/tables folder
+dir.create(
+  "results/tables",
+  recursive = TRUE,
+  showWarnings = FALSE
+)
+
+# Create dataset exploration summary
+exploration_summary <- data.frame(
+  Total_Genes = nrow(counts),
+  Total_Columns = ncol(counts),
+  Total_Samples = ncol(counts) - 1,
+  Missing_Values = sum(is.na(counts)),
+  Duplicate_Gene_IDs = sum(duplicated(counts$ensemblID)),
+  Minimum_Count = min(as.matrix(count_matrix)),
+  Maximum_Count = max(as.matrix(count_matrix))
+)
+
+# Display summary
+print(exploration_summary)
+
+# Save summary as CSV
+write.csv(
+  exploration_summary,
+  "results/tables/dataset_exploration_summary.csv",
+  row.names = FALSE
+)
+
+# Verify file creation
+file.exists("results/tables/dataset_exploration_summary.csv")
+
