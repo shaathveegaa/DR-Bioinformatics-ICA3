@@ -1,0 +1,18 @@
+
+# R temporary files
+.Rhistory
+.RData
+.Rproj.user/
+
+# RStudio project files
+*.Rproj
+
+# Downloaded compressed datasets
+data/*.gz
+
+# Large downloaded count matrix
+data/GSE160306_human_retina_DR_totalRNA_counts.txt
+
+# Temporary files
+*.tmp
+*.log
