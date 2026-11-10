@@ -1,0 +1,43 @@
+
+# 1. Load dataset
+file_path <- "data/GSE160306_human_retina_DR_totalRNA_counts.txt"
+
+counts <- read.csv(
+  file_path,
+  header = TRUE,
+  check.names = FALSE
+)
+
+# 2. Dataset dimensions
+cat("Dataset dimensions:\n")
+print(dim(counts))
+
+# 3. Column names
+cat("Sample column names:\n")
+print(colnames(counts))
+
+# 4. First few rows
+head(counts)
+
+# 5. Data structure
+str(counts)
+
+# 6. Missing values
+cat("Missing values:\n")
+print(sum(is.na(counts)))
+
+# 7. Duplicate gene IDs
+cat("Duplicate gene IDs:\n")
+print(sum(duplicated(counts$ensemblID)))
+
+# 8. Summary statistics
+summary(counts)
+
+# 9. Check count values
+count_matrix <- counts[, -1]
+
+cat("Minimum count:\n")
+print(min(as.matrix(count_matrix), na.rm = TRUE))
+
+cat("Maximum count:\n")
+print(max(as.matrix(count_matrix), na.rm = TRUE))
