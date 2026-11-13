@@ -1,4 +1,3 @@
-
 # Comparative Transcriptomic Analysis of Diabetic Retinopathy
 
 ## 1. Project Overview
@@ -21,11 +20,16 @@ To perform a comparative transcriptomic analysis of gene expression changes acro
 
 - **Dataset:** GSE160306
 - **Source:** NCBI Gene Expression Omnibus (GEO)
-- **Organism:** Homo sapiens
+- **Organism:** Homo sapiens (Human)
 - **Data Type:** RNA sequencing gene expression data
-- **Data Format:** Gene count matrix
+- **Data Format:** Raw gene count matrix
+- **Number of genes:** 58,051
+- **Number of samples:** 79
+- **Dataset file:** `GSE160306_human_retina_DR_totalRNA_counts.txt`
 
-Dataset link: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE160306
+Dataset link: [NCBI GEO – GSE160306](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE160306)
+
+The raw count file is stored in the `data/` folder locally. It is excluded from GitHub because of its file size. Refer to `data/README.txt` for download instructions.
 
 ## 5. Tools and Technologies
 
@@ -37,19 +41,22 @@ Dataset link: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE160306
 - pheatmap
 - clusterProfiler
 - org.Hs.eg.db
-- GitHub
+- Git and GitHub
 
 ## 6. Methodology
 
 The analysis will follow these steps:
 
 1. Dataset acquisition and import.
-2. Sample metadata inspection.
-3. Data preprocessing and quality control.
-4. Differential gene expression analysis.
-5. Gene expression visualization.
-6. Functional enrichment and pathway analysis.
-7. Biological interpretation and reporting.
+2. Dataset exploration and summary statistics.
+3. Sample metadata inspection using GEO information.
+4. Data preprocessing and quality control.
+5. Differential gene expression analysis.
+6. Gene expression visualization using appropriate plots, including PCA and sample count plots.
+7. Functional enrichment and pathway analysis.
+8. Biological interpretation and final reporting.
+
+**Note:** Expression boxplots are not included in the current analysis plan.
 
 ## 7. Project Structure
 
@@ -60,13 +67,18 @@ DR_Bioinformatics_ICA3/
 │   └── README.txt
 │
 ├── code/
-│   └── R scripts
+│   ├── 01_import_data.R
+│   ├── 02_dataset_exploration.R
+│   ├── 03_metadata_inspection.R
+│   ├── 04_preprocessing_QC.R
+│   ├── 05_differential_expression.R
+│   └── 06_visualization_enrichment.R
 │
 ├── results/
-│   └── Analysis outputs
+│   ├── plots/
+│   └── tables/
 │
 ├── report/
-│   └── Final report
 │
 ├── README.md
 └── .gitignore
@@ -75,16 +87,25 @@ DR_Bioinformatics_ICA3/
 ## 8. Current Progress
 
 - Project topic selected.
-- GSE160306 dataset identified.
-- Gene count matrix downloaded.
-- Count matrix imported into RStudio.
-- Project repository structure created.
+- GSE160306 dataset identified from NCBI GEO.
+- Raw gene count matrix downloaded.
+- Count matrix successfully imported into RStudio.
+- Dataset exploration completed.
+- Identified 58,051 genes and 79 samples.
+- Confirmed that the dataset contains no missing values.
+- Confirmed that there are no duplicate Ensembl gene IDs.
+- Dataset exploration summary prepared.
+- GitHub repository created and initial project files pushed.
+- Dataset documentation added to the `data/` folder.
 
 ## 9. Expected Outcomes
 
 The study is expected to identify differentially expressed genes and biological pathways associated with diabetic retinopathy progression.
 
+The results may provide insights into molecular changes associated with different stages of diabetic retinopathy.
+
 ## 10. References
 
-1. NCBI Gene Expression Omnibus (GEO). GSE160306.
-   https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE160306
+1. NCBI Gene Expression Omnibus (GEO). **GSE160306**. Available at: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE160306
+
+
