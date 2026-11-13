@@ -107,5 +107,3 @@ The results may provide insights into molecular changes associated with differen
 ## 10. References
 
 1. NCBI Gene Expression Omnibus (GEO). **GSE160306**. Available at: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE160306
-
-
