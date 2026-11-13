@@ -1,0 +1,9 @@
+"Disease_Group","Number_of_Samples"
+"Control_Macula",10
+"Control_Periphery",10
+"Diabetic_Macula",10
+"Diabetic_Periphery",10
+"DME_Macula",10
+"DME_Periphery",10
+"NPDR_Macula",9
+"NPDR_Periphery",10
