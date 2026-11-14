@@ -2265,7 +2265,7 @@ window.Quarto = {
 <tr class="odd">
 <td style="text-align: left;"><strong>Total Ensembl Gene IDs</strong></td>
 <td style="text-align: center;">58,051</td>
-<td style="text-align: left;">Full inventory of human gene transcripts</td>
+<td style="text-align: left;">Complete human gene transcript inventory</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>Total Biological Samples</strong></td>
@@ -2300,11 +2300,13 @@ window.Quarto = {
 <tr class="even">
 <td style="text-align: left;"><strong>Filtered Expressed Genes</strong></td>
 <td style="text-align: center;">27,457</td>
-<td style="text-align: left;">Genes retained with <span class="math inline">\(\ge 10\)</span> counts in <span class="math inline">\(\ge 2\)</span> samples</td>
+<td style="text-align: left;">Retained with <span class="math inline">\(\ge 10\)</span> counts in <span class="math inline">\(\ge 2\)</span> samples</td>
 </tr>
 </tbody>
 </table>
-<p><em>Summary:</em> The raw count matrix imported from GSE160306 contains 58,051 genes across 79 human retina punch biopsies. Data validation confirmed zero missing entries and zero duplicated identifiers. Low-expression filtering retained 27,457 informative genes for downstream statistical modeling.</p>
+<blockquote class="blockquote">
+<p><strong>Explanation:</strong> The imported raw count matrix from GSE160306 contains 58,051 Ensembl gene features across 79 post-mortem retinal punch biopsies. Quality checks confirmed zero missing entries and zero duplicate IDs. Low-expression filtering retained 27,457 informative genes for statistical modeling.</p>
+</blockquote>
 <hr>
 </section>
 <section id="sample-distribution-across-disease-stages-and-retinal-sites" class="level1" data-number="2">
@@ -2365,13 +2367,15 @@ window.Quarto = {
 <td style="text-align: center;">10</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>Total Samples</strong></td>
+<td style="text-align: left;"><strong>Total Retinal Samples</strong></td>
 <td style="text-align: left;"><strong>All Groups</strong></td>
 <td style="text-align: center;"><strong>79</strong></td>
 </tr>
 </tbody>
 </table>
-<p><em>Summary:</em> Samples are balanced across disease stages and anatomical locations (10 samples per group, except NPDR Macula with 9 samples), enabling unbiased comparisons between macular and peripheral retinas.</p>
+<blockquote class="blockquote">
+<p><strong>Explanation:</strong> The 79 samples from 43 donor eyes are evenly balanced across disease stages and anatomical sites (10 samples per group, except NPDR Macula with 9 samples), providing balanced statistical power for comparisons between macular and peripheral retinas.</p>
+</blockquote>
 <hr>
 </section>
 <section id="sequencing-depth-and-library-size-quality-control" class="level1" data-number="3">
@@ -2382,7 +2386,9 @@ window.Quarto = {
 <figcaption>Sequencing Library Sizes Across Retinal Samples</figcaption>
 </figure>
 </div>
-<p><em>Summary:</em> Post-filtering sequencing depths range from 16.7 million to 40.1 million mapped reads per sample, with an average library size of 26.4 million reads. The uniform distribution confirms high technical quality with no library failures or extreme dropouts across the 79 samples.</p>
+<blockquote class="blockquote">
+<p><strong>Explanation:</strong> Mapped sequencing depths range from 16.7 million to 40.1 million reads per sample, with an average library size of 26.4 million reads. The uniform distribution confirms consistent sequencing depth across all 79 libraries with no technical dropouts.</p>
+</blockquote>
 <hr>
 </section>
 <section id="principal-component-analysis-pca" class="level1" data-number="4">
@@ -2393,7 +2399,9 @@ window.Quarto = {
 <figcaption>PCA Scatter Plot of Retinal Gene Expression Profiles</figcaption>
 </figure>
 </div>
-<p><em>Summary:</em> Unsupervised PCA on VST-transformed data accounts for 51.97% of total variance (PC1 = 31.47%, PC2 = 20.50%). Samples separate primarily by anatomical location (circles = Macula, triangles = Periphery) and donor biological sex (quadrant clusters), with secondary separation along the disease progression axis.</p>
+<blockquote class="blockquote">
+<p><strong>Explanation:</strong> Unsupervised PCA on VST-transformed data captures 51.97% of total variance (PC1 = 31.47%, PC2 = 20.50%). Samples separate primarily by anatomical location (circles = Macula, triangles = Periphery) and donor biological sex (quadrant clusters), with secondary separation along the disease progression axis.</p>
+</blockquote>
 <hr>
 </section>
 <section id="top-30-most-variable-genes-and-expression-heatmap" class="level1" data-number="5">
@@ -2529,7 +2537,9 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p><em>Summary:</em> Hierarchical clustering shows that major cohort variance is driven by Y-chromosome genes (<em>UTY</em>, <em>DDX3Y</em>, <em>RPS4Y1</em>, <em>ZFY</em>, <em>NLGN4Y</em>) separating male and female donors, followed by sub-clustering based on anatomical site (macula vs. periphery) and immediate-early stress genes (<em>FOS</em>, <em>EGR1</em>).</p>
+<blockquote class="blockquote">
+<p><strong>Explanation:</strong> Hierarchical clustering reveals that primary cohort variance is driven by Y-linked genes (<em>UTY</em>, <em>DDX3Y</em>, <em>RPS4Y1</em>, <em>ZFY</em>, <em>NLGN4Y</em>) that separate male from female donors, followed by anatomical differences between macular and peripheral tissues and immediate-early stress genes (<em>FOS</em>, <em>EGR1</em>).</p>
+</blockquote>
 <hr>
 </section>
 <section id="differential-gene-expression-npdr-vs.-healthy-control" class="level1" data-number="6">
@@ -2706,7 +2716,9 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p><em>Summary:</em> Testing NPDR against Control identified 46 statistically significant DEGs (<span class="math inline">\(\text{padj} &lt; 0.05\)</span>, <span class="math inline">\(|\log_2\text{FC}| &gt; 1.0\)</span>), with 10 upregulated and 36 downregulated genes. Key downregulated genes reflect capillary pericyte detachment (<em>RGS5</em>), basement membrane disassembly (<em>ADAMTS4</em>, <em>ADAMTS9</em>, <em>COL6A6</em>), and impaired vasoactivity (<em>EDNRA</em>, <em>INHBA</em>).</p>
+<blockquote class="blockquote">
+<p><strong>Explanation:</strong> Testing NPDR against Control identified 46 statistically significant DEGs (<span class="math inline">\(\text{padj} &lt; 0.05\)</span>, <span class="math inline">\(|\log_2\text{FC}| &gt; 1.0\)</span>), with 10 upregulated and 36 downregulated genes. The downregulated set is enriched for markers of pericyte loss (<em>RGS5</em>), basement membrane disassembly (<em>ADAMTS4</em>, <em>ADAMTS9</em>, <em>COL6A6</em>), and impaired vasoactivity (<em>EDNRA</em>, <em>INHBA</em>).</p>
+</blockquote>
 <hr>
 </section>
 <section id="gene-ontology-go-biological-process-enrichment-analysis" class="level1" data-number="7">
@@ -2807,7 +2819,9 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p><em>Summary:</em> Over-representation analysis identified 8 statistically significant GO Biological Process terms (<span class="math inline">\(\text{padj} &lt; 0.05\)</span>). The enriched terms converge on extracellular matrix organization (<code>GO:0030198</code>) and peptide hormone/vasoactive signaling, confirming structural matrix breakdown in early non-proliferative retinopathy.</p>
+<blockquote class="blockquote">
+<p><strong>Explanation:</strong> Over-representation analysis identified 8 statistically significant GO Biological Process terms (<span class="math inline">\(\text{padj} &lt; 0.05\)</span>). The terms converge on extracellular matrix organization (<code>GO:0030198</code>) and peptide hormone/vasoactive signaling, highlighting basement membrane remodeling in early NPDR.</p>
+</blockquote>
 <hr>
 </section>
 <section id="conclusions" class="level1" data-number="8">
